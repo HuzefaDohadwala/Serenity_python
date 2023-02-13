@@ -3,7 +3,7 @@
 Technical Overview
 Frontend :
 Html, css, js, react
-Backend:
+Backend :
 django
 *******************************************************************************************************
 Figma:https://www.figma.com/file/R0SKYiV2XiyKfFWJjMyyBu/Serenity?node-id=0%3A1&t=Ennpm2NqzCGV1iiK-0
