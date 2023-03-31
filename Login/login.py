@@ -119,21 +119,25 @@ def member_login_button(entry1, entry2, frame):
 
     if user:
         window.destroy()  # destroy current window
-        w = customtkinter.CTk()
-        w.geometry("1280x600")
-        w.title('Welcome')
+        # w = customtkinter.CTk()
+        # w.geometry("1280x600")
+        # w.title('Welcome')
 
         # Create new frame in the new window
-        frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
-        frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-
-        l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
-        l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+        # frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
+        # frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        #
+        # l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
+        # l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
         # Pass the database connection and user to the home page
         # home_page = HomePage(master=frame2, mydb=mydb, user=user)
 
-        w.mainloop()
+        # w.mainloop()
+        # Import and launch the new file after successful login
+        import Landing.mem_landing
+        Landing.mem_landing.launch_member_page(user, conn)
+
     else:
         # Show error message if user is not found
         error_label = customtkinter.CTkLabel(master=frame, text="Invalid username or password",
@@ -188,22 +192,26 @@ def listener_login_button(entry1, entry2, frame):
     user = cursor.fetchone()
 
     if user:
-        window.destroy()  # destroy current window
-        w = customtkinter.CTk()
-        w.geometry("1280x600")
-        w.title('Welcome')
+        # window.destroy()  # destroy current window
+        # w = customtkinter.CTk()
+        # w.geometry("1280x600")
+        # w.title('Welcome')
+        #
+        # # Create new frame in the new window
+        # frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
+        # frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+        #
+        # l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
+        # l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+        #
+        # # Pass the database connection and user to the home page
+        # # home_page = HomePage(master=frame2, mydb=mydb, user=user)
+        #
+        # w.mainloop()
+        # Import and launch the new file after successful login
+        import Landing.list_landing
+        Landing.list_landing.launch_listener_page(user, conn)
 
-        # Create new frame in the new window
-        frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
-        frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
-
-        l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
-        l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
-
-        # Pass the database connection and user to the home page
-        # home_page = HomePage(master=frame2, mydb=mydb, user=user)
-
-        w.mainloop()
     else:
         # Show error message if user is not found
         error_label = customtkinter.CTkLabel(master=frame, text="Invalid username or password",
