@@ -74,7 +74,7 @@ except mysql.connector.Error as error:
 #                                              font=('Century Gothic', 12), fg_color='red')
 #         error_label.place(x=50, y=280)
 
-
+#
 def login_as_member():
     # Update account_type to "member" in the database
     cursor.execute("UPDATE members SET account_type = 'member' WHERE username = %s", ('username',))
@@ -97,7 +97,8 @@ def login_as_member():
     l3.place(x=155, y=195)
 
     # Create custom button
-    button1 = customtkinter.CTkButton(master=frame, width=220, text="Login", corner_radius=6)
+    button1 = customtkinter.CTkButton(master=frame, width=220, text="Login",
+                                      command=lambda: member_login_button(entry1, entry2, frame), corner_radius=6)
     # button1.place(x=50, y=240)
     button1.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
     # member_frame = customtkinter.CTkFrame(window)
@@ -109,10 +110,41 @@ def login_as_member():
     listener_button.destroy()
 
 
+def member_login_button(entry1, entry2, frame):
+    print("Button clicked")
+
+    cursor.execute(f"SELECT * FROM members WHERE username=%s AND password=%s ",
+                   (entry1.get(), entry2.get()))
+    user = cursor.fetchone()
+
+    if user:
+        window.destroy()  # destroy current window
+        w = customtkinter.CTk()
+        w.geometry("1280x600")
+        w.title('Welcome')
+
+        # Create new frame in the new window
+        frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
+        frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+
+        l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
+        l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+
+        # Pass the database connection and user to the home page
+        # home_page = HomePage(master=frame2, mydb=mydb, user=user)
+
+        w.mainloop()
+    else:
+        # Show error message if user is not found
+        error_label = customtkinter.CTkLabel(master=frame, text="Invalid username or password",
+                                             font=('Century Gothic', 12), fg_color='red')
+        error_label.place(x=50, y=280)
+
+
 def login_as_listener():
     # Update account_type to "listener" in the database
-    cursor.execute("UPDATE listeners SET account_type = 'listener' WHERE username = %s", ('username',))
-    conn.commit()
+    # cursor.execute("UPDATE listeners SET account_type = 'listener'")
+    # conn.commit()
 
     # Create the new "Listener" page and switch to it
 
@@ -124,15 +156,18 @@ def login_as_listener():
 
     entry1 = customtkinter.CTkEntry(master=frame, width=220, placeholder_text='Username')
     entry1.place(x=50, y=110)
+    username = entry1.get()
 
     entry2 = customtkinter.CTkEntry(master=frame, width=220, placeholder_text='Password', show="*")
     entry2.place(x=50, y=165)
+    pw = entry2.get()
 
     l3 = customtkinter.CTkLabel(master=frame, text="Forget password?", font=('Century Gothic', 12))
     l3.place(x=155, y=195)
 
     # Create custom button
-    button1 = customtkinter.CTkButton(master=frame, width=220, text="Login", command=login_function(), corner_radius=6)
+    button1 = customtkinter.CTkButton(master=frame, width=220, text="Login",
+                                      command=lambda: listener_login_button(entry1, entry2, frame), corner_radius=6)
     button1.place(x=50, y=240)
 
     # Flush login buttons
@@ -145,7 +180,37 @@ def login_as_listener():
     # listener_frame.pack(expand=True)
 
 
-# Create the login buttons
+def listener_login_button(entry1, entry2, frame):
+    print("Button clicked")
+
+    cursor.execute(f"SELECT * FROM listeners WHERE username=%s AND password=%s ",
+                   (entry1.get(), entry2.get()))
+    user = cursor.fetchone()
+
+    if user:
+        window.destroy()  # destroy current window
+        w = customtkinter.CTk()
+        w.geometry("1280x600")
+        w.title('Welcome')
+
+        # Create new frame in the new window
+        frame2 = customtkinter.CTkFrame(master=w, width=1280, height=720, corner_radius=0)
+        frame2.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+
+        l1 = customtkinter.CTkLabel(master=frame2, text=f"Welcome, {user[1]}!", font=('Century Gothic', 60))
+        l1.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+
+        # Pass the database connection and user to the home page
+        # home_page = HomePage(master=frame2, mydb=mydb, user=user)
+
+        w.mainloop()
+    else:
+        # Show error message if user is not found
+        error_label = customtkinter.CTkLabel(master=frame, text="Invalid username or password",
+                                             font=('Century Gothic', 12), fg_color='red')
+        error_label.place(x=50, y=280)
+
+
 member_button = customtkinter.CTkButton(window, text="Login as member", command=login_as_member)
 listener_button = customtkinter.CTkButton(window, text="Login as listener", command=login_as_listener)
 
