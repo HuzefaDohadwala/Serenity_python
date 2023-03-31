@@ -11,13 +11,13 @@ def launch_member_page(user, mydb):
         chat_window.geometry("400x600")
         chat_window.title(f"Chatting with {username}")
 
-        chat_frame = customtkinter.CTkFrame(master=chat_window, width=400, height=600, corner_radius=0)
+        chat_frame = customtkinter.CTkFrame(master=chat_window, width=500, height=600, corner_radius=0)
         chat_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
-        chat_area = customtkinter.CTkTextbox(master=chat_frame, width=50, height=25)
+        chat_area = customtkinter.CTkTextbox(master=chat_frame, width=400, height=350)
         chat_area.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
-        entry_area = customtkinter.CTkEntry(master=chat_frame, width=30)
+        entry_area = customtkinter.CTkEntry(master=chat_frame, width=300)
         entry_area.place(relx=0.5, rely=0.85, anchor=tkinter.CENTER)
 
         def send_message():
@@ -30,7 +30,7 @@ def launch_member_page(user, mydb):
             mydb.commit()
 
         send_button = customtkinter.CTkButton(master=chat_frame, text="Send", command=send_message, corner_radius=6)
-        send_button.place(relx=0.8, rely=0.85)
+        send_button.place(relx=0.6, rely=0.85)
 
         # Retrieve previous messages from the database
         sql = "SELECT * FROM messages WHERE (sender = %s AND receiver = %s) OR (sender = %s AND receiver = %s) ORDER BY timestamp ASC"

@@ -36,7 +36,7 @@ def launch_listener_page(user, mydb):
         chat_window.geometry("400x600")
         chat_window.title(f"Chatting with {username}")
 
-        chat_frame = customtkinter.CTkFrame(master=chat_window, width=400, height=600, corner_radius=0)
+        chat_frame = customtkinter.CTkFrame(master=chat_window, width=500, height=600, corner_radius=0)
         chat_frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
         chat_area = customtkinter.CTkTextbox(master=chat_frame, width=400, height=400)
