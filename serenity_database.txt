@@ -1,0 +1,28 @@
+CREATE DATABASE serenity;
+USE serenity;
+CREATE TABLE listeners (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255),
+  password VARCHAR(255),
+  account_type VARCHAR(255)
+);
+CREATE TABLE members (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255),
+  password VARCHAR(255),
+  account_type VARCHAR(255)
+);
+CREATE TABLE messages (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  sender VARCHAR(255) NOT NULL,
+  receiver VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO members (username, password, account_type)
+VALUES
+('alice', 'password123', 'member'),
+('bob', 'password456', 'member'),
+('Kedar', '123', 'members'),
+('Jay', 'jay123', 'members'),
+('test', 'qwerty', 'members');
