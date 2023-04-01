@@ -141,9 +141,16 @@ class Member_landing(customtkinter.CTkFrame):
         # Create the components
         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
                                               font=('Century Gothic', 25))
+        self.chatarea = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="white",
+                                                 height=500)
+        self.type = customtkinter.CTkEntry(self.inner_frame, width=520, corner_radius=6, height=25)
+        self.send_button = customtkinter.CTkButton(self.inner_frame, text="Send", width=80, height=25, corner_radius=6)
 
         # Place the components
         self.welcome.pack(side='top', padx=20, pady=50)
+        self.chatarea.place(x=400, y=150)
+        self.type.place(x=400, y=625)
+        self.send_button.place(x=920, y=625)
 
 
 class Listener_landing(customtkinter.CTkFrame):
@@ -159,9 +166,15 @@ class Listener_landing(customtkinter.CTkFrame):
         # Create the components
         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
                                               font=('Century Gothic', 25))
-
+        self.chatarea = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="white",
+                                                 height=500)
+        self.type = customtkinter.CTkEntry(self.inner_frame, width=520, corner_radius=6, height=25)
+        self.send_button = customtkinter.CTkButton(self.inner_frame, text="Send", width=80, height=25, corner_radius=6)
         # Place the components
         self.welcome.pack(side='top', padx=20, pady=50)
+        self.chatarea.place(x=400, y=150)
+        self.type.place(x=400, y=625)
+        self.send_button.place(x=920, y=625)
 
 
 class LoginApp(customtkinter.CTkFrame):
