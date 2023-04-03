@@ -1,3 +1,4 @@
+import tkinter
 import tkinter as tk
 from tkinter import messagebox
 import mysql.connector
@@ -8,17 +9,17 @@ customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
 
 # Create a database connection
-try:
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Kedar@2004",
-        database="serenity",
-    )
+#try:
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Root@1234",
+    database="serenity",
+)
 
-    print("Database connection established!")
-except mysql.connector.Error as error:
-    print("Error while connecting to MySQL: ", error)
+    #print("Database connection established!")
+#except mysql.connector.Error as error:
+    #print("Error while connecting to MySQL: ", error)
 
 cursor = conn.cursor()
 
@@ -131,6 +132,9 @@ class SignupApp(customtkinter.CTkFrame):
 class Member_landing(customtkinter.CTkFrame):
     def __init__(self, master=None, username=None):
         super().__init__(master)
+        self.type = None
+        self.chatframe = None
+        self.send_button = None
         self.master = master
         self.pack(fill='both', expand=True)
 
@@ -138,19 +142,72 @@ class Member_landing(customtkinter.CTkFrame):
         self.inner_frame = customtkinter.CTkFrame(self)  # set background color of inner frame to black
         self.inner_frame.pack(fill='both', expand=True)
 
-        # Create the components
+        # Create the welcome label
         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
                                               font=('Century Gothic', 25))
-        self.chatarea = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="white",
-                                                 height=500)
-        self.type = customtkinter.CTkEntry(self.inner_frame, width=520, corner_radius=6, height=25)
-        self.send_button = customtkinter.CTkButton(self.inner_frame, text="Send", width=80, height=25, corner_radius=6)
 
-        # Place the components
+        # Place the welcome label
         self.welcome.pack(side='top', padx=20, pady=50)
-        self.chatarea.place(x=400, y=150)
-        self.type.place(x=400, y=625)
-        self.send_button.place(x=920, y=625)
+
+        # Create the chat buttons component
+        chat_buttons = customtkinter.CTkFrame(self.inner_frame)
+        chat_buttons.pack(side='right', fill='y', padx=20, pady=(0, 50))
+
+        # Set the size of the chat buttons component
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        chat_buttons_width = int(screen_width / 4)
+        chat_buttons_height = int(screen_height / 8)
+        chat_buttons.configure(width=chat_buttons_width, height=chat_buttons_height)
+
+        # Create the chat buttons
+        sql = "SELECT * FROM users WHERE role='listener';"
+        cursor.execute(sql)
+        listeners = cursor.fetchall()
+
+        # Set the size of the chat buttons component
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        chat_buttons_width = int(screen_width / 4)
+        chat_buttons_height = int(screen_height / 8)
+        chat_buttons.configure(width=chat_buttons_width, height=chat_buttons_height)
+
+        # Create the chat buttons
+        button_x = 0
+        button_y = 0
+        for listener in listeners:
+            listener_username = listener[1]
+            chat_button = customtkinter.CTkButton(master=chat_buttons, text=f"Chat with {listener_username}",
+                                                command=lambda u=username: self.initiate_chat(u),
+                                                width=400, height=100, corner_radius=0)
+            chat_button.place(x=button_x, y=button_y)
+            button_y += 120
+            chat_button.pack(padx=0, pady=0, ipadx=0, ipady=0, fill='none')
+
+
+
+
+    # def initiate_chat(self, username):
+    #     print("Listener button pressed!!")
+    #     self.chatframe = customtkinter.CTk()
+    #     self.chatframe = customtkinter.CTkFrame(self.inner_frame, width=600, corner_radius=6, fg_color="white",
+    #                                             height=500)
+    #     self.type = customtkinter.CTkEntry(self.inner_frame, width=550, corner_radius=6, height=25)
+    #     self.send_button = customtkinter.CTkButton(self.inner_frame, command=self.send_message(),
+    #                                                text="Send", width=80,
+    #                                                height=25, corner_radius=6)
+    #
+    #     self.chatframe.place(x=370, y=150)
+    #     self.type.place(x=370, y=660)
+    #     self.send_button.place(x=920, y=660)
+    #
+    #
+    #
+    #
+    # def send_message(self):
+    #     message = self.type.get()
+    #     self.type.delete(0, tkinter.END)
+    #     self.chatframe.insert()
 
 
 class Listener_landing(customtkinter.CTkFrame):
@@ -166,15 +223,9 @@ class Listener_landing(customtkinter.CTkFrame):
         # Create the components
         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
                                               font=('Century Gothic', 25))
-        self.chatarea = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="white",
-                                                 height=500)
-        self.type = customtkinter.CTkEntry(self.inner_frame, width=520, corner_radius=6, height=25)
-        self.send_button = customtkinter.CTkButton(self.inner_frame, text="Send", width=80, height=25, corner_radius=6)
+
         # Place the components
         self.welcome.pack(side='top', padx=20, pady=50)
-        self.chatarea.place(x=400, y=150)
-        self.type.place(x=400, y=625)
-        self.send_button.place(x=920, y=625)
 
 
 class LoginApp(customtkinter.CTkFrame):
