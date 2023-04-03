@@ -1,0 +1,190 @@
+{
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": [
+        "Hello!",
+        "Hi there!",
+        "Hey!",
+        "Greetings!",
+        "Good day!",
+        "Welcome!",
+        "Nice to meet you!",
+        "Howdy!",
+        "Salutations!",
+        "Yo!"
+      ],
+      "responses": [
+        "Hello there!",
+        "Hi! How can I help you today?",
+        "Greetings! What can I assist you with?",
+        "Hey! What brings you here?",
+        "Welcome! How may I be of service to you?",
+        "Good day! How can I assist you?",
+        "Hello, how can I help you today?",
+        "Hi there, what can I do for you?",
+        "Greetings and welcome! How may I assist you?",
+        "Hey, what can I help you with today?"
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": [
+        "What do you call yourself?",
+        "How should I address you?",
+        "May I know your name?",
+        "What name do you go by?",
+        "What's the name you prefer?",
+        "What's the title I should use for you?",
+        "Can you tell me your name please?",
+        "How may I refer to you?",
+        "What's your given name?",
+        "Do you have a name?"
+      ],
+      "responses": [
+        "I go by the name SereneAI.",
+        "You can address me as SereneAI.",
+        "My name is SereneAI.",
+        "You may refer to me as SereneAI.",
+        "I prefer to be called SereneAI.",
+        "The title I use is SereneAI.",
+        "I am known as SereneAI.",
+        "Please call me SereneAI.",
+        "My given name is SereneAI.",
+        "I am an AI chatbot, so I don't have a traditional name, but you can call me SereneAI."
+      ]
+    },
+    {
+      "tag": "anxiety",
+      "patterns": [
+        "I'm feeling anxious right now",
+        "I'm struggling with anxiety",
+        "Anxiety is overwhelming me",
+        "I'm feeling nervous and uneasy",
+        "I'm experiencing high levels of anxiety",
+        "My anxiety is really bad today",
+        "I'm feeling anxious and stressed",
+        "Anxiety is taking over me",
+        "I'm having an anxiety attack",
+        "I'm feeling on edge and anxious"
+      ],
+      "responses": [
+        "I'm sorry to hear that you're feeling anxious. I'm here for you if you need to talk.",
+        "Anxiety can be tough to deal with. Remember that you're not alone and I'm here to support you.",
+        "I understand that anxiety can be overwhelming. Let's work together to find ways to manage it.",
+        "It's okay to feel anxious sometimes. Remember that I'm here to help you through it.",
+        "I'm sorry to hear that anxiety is affecting you today. Let's focus on finding ways to calm your mind and reduce your stress.",
+        "Anxiety can be really difficult to cope with. Please know that I'm here for you and we can work together to find solutions.",
+        "I understand that anxiety can feel overwhelming, but remember that you're not alone. We can work through this together.",
+        "It takes a lot of strength to talk about anxiety. I'm proud of you for reaching out. Let's find ways to help you feel better.",
+        "Anxiety can be exhausting. Please know that I'm here to support you and we can work together to find ways to manage it.",
+        "Thank you for trusting me with your feelings. Remember that I'm here to listen and help you in any way I can."
+      ]
+    },
+    {
+      "tag": "gratitude",
+      "patterns": [
+        "Thank You",
+        "Thank you sereneai",
+        "Thank you for being here for me.",
+        "I really appreciate you listening to me.",
+        "Thanks for being there to support me.",
+        "I'm grateful for your help and guidance.",
+        "Thank you for being a great listener.",
+        "I'm thankful to have you to talk to.",
+        "Thank you for being patient and understanding.",
+        "Your support means a lot to me.",
+        "Thanks for being a comforting presence.",
+        "I appreciate you being there to help me feel better."
+      ],
+      "responses": [
+        "You're welcome. I'm here for you whenever you need someone to talk to.",
+        "I'm glad I could be here for you. Please don't hesitate to reach out to me if you need anything in the future.",
+        "It was my pleasure to listen and support you. Remember that I'm always here for you.",
+        "I'm grateful to be able to assist you. If you ever need me, just let me know.",
+        "Thank you for sharing with me. I'm always available to talk whenever you need me.",
+        "I appreciate your trust in me. If you ever need to talk again, just know that I'm here.",
+        "You're welcome. Remember that you can always reach out to me if you need someone to listen.",
+        "It was my pleasure to be able to help you. Please know that I'm always here if you need me.",
+        "Thank you for letting me be a part of your journey. If you ever need me again, I'll be here.",
+        "I'm here for you whenever you need someone to talk to. Thank you for allowing me to be a source of support for you."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Goodbye, and thank you for your help.",
+        "It was great talking to you. Take care.",
+        "I'll talk to you again soon. Bye for now.",
+        "Thank you for your support. Goodbye.",
+        "It's time for me to go now. Goodbye.",
+        "I appreciate your help. Goodbye for now.",
+        "I'm feeling better now. Thank you and goodbye.",
+        "I'll be back if I need more support. Goodbye.",
+        "I'm glad I reached out to you. Goodbye for now.",
+        "Thanks for being there for me. Goodbye."
+      ],
+      "responses": [
+        "You're welcome. Take care, and don't hesitate to reach out if you need anything in the future.",
+        "It was great talking to you too. Remember that I'm here for you whenever you need me.",
+        "I'll be looking forward to our next conversation. Take care for now.",
+        "It was my pleasure to support you. Feel free to come back anytime.",
+        "Thank you for reaching out. Remember that I'm always here if you need someone to talk to.",
+        "I'm glad I could help. Don't hesitate to contact me again if you need anything.",
+        "I'm glad to hear that you're feeling better. Remember that I'm here if you need more support in the future.",
+        "I'll be here if you need me. Take care, and thank you for reaching out.",
+        "I'm glad that I could be of help to you. Take care, and don't hesitate to contact me again if you need anything.",
+        "It was my pleasure to be there for you. Remember that I'm always available if you need someone to talk to."
+      ]
+    },
+    {
+      "tag": "AcademicPressure",
+      "patterns": [
+        "I'm feeling overwhelmed with schoolwork",
+        "I can't keep up with my assignments",
+        "I'm struggling to balance school and other activities",
+        "I feel like I'm not smart enough to succeed in school",
+        "I'm so stressed about getting good grades",
+        "I have too much on my plate with school and extracurricular activities",
+        "I'm afraid of failing my classes",
+        "I'm having trouble concentrating on my schoolwork"
+      ],
+      "responses": [
+        "It sounds like you're feeling a lot of pressure from school. Would you like to talk about some strategies to help manage your workload?",
+        "I'm sorry to hear that you're feeling overwhelmed. Let's talk about some ways to reduce your stress and anxiety related to school.",
+        "You're not alone in feeling this way. Let's work together to come up with some strategies to help you feel more in control of your academic responsibilities."
+      ]
+    },
+    {
+      "tag": "AcademicSupport",
+      "patterns": [
+        "Can you help me come up with a study schedule?",
+        "I need help with time management",
+        "How can I improve my grades?",
+        "What are some study tips for difficult subjects?",
+        "Can you recommend any resources for extra academic support?",
+        "How can I reduce my test anxiety?"
+      ],
+      "responses": [
+        "Absolutely! Let's work together to come up with a plan that works for you.",
+        "I'm happy to help! Let's talk about some strategies for improving your academic performance.",
+        "There are many resources available to help you succeed in school. Let's explore some options together."
+      ]
+    },
+    {
+      "tag": "SelfCare",
+      "patterns": [
+        "I'm feeling burned out",
+        "I need to take a break from schoolwork",
+        "How can I practice self-care during the school week?",
+        "I'm not getting enough sleep because of schoolwork",
+        "I feel guilty taking time for myself when I have so much schoolwork to do"
+      ],
+      "responses": [
+        "Self-care is important, especially when you're feeling overwhelmed. Let's talk about some ways to incorporate self-care into your routine.",
+        "It's okay to take breaks and prioritize your well-being. Let's talk about some self-care strategies that work for you.",
+        "Taking care of yourself is essential for academic success. Let's explore some self-care practices that can help you feel more energized and focused."
+      ]
+    }
+  ]
+}
