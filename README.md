@@ -1,7 +1,7 @@
 
 # Serenity
 
-Our sem-VI Python project involved developing a mental health app entirely using Python. From start to finish, we utilized Python programming to design, build, test, and debug the app. Building a mental health app in Python offered us a chance to apply our theoretical knowledge practically, and we gained valuable experience in project management, software development, and testing
+Our sem-VI Python project involved developing a mental health app entirely using Python. From start to finish, we utilized Python programming to design, build, test, and debug the app. Building a mental health app in Python offered us a chance to apply our theoretical knowledge practically, and we gained valuable experience in project management, software development, and testing.
 
 
 ## Features
