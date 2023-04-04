@@ -87,9 +87,9 @@ entry_box.bind("<Return>", (lambda event: send()))
 
 send_button = tk.Button(root, text="Send", command=send, bg='blue', fg=FOREGROUND_COLOR)
 
-scrollbar.place(x=1125, y=50, height=600)
-chat_log.place(x=375, y=50, height=600, width=750)
-entry_box.place(x=375, y=665, height=40, width=650)
-send_button.place(x=1050, y=665, height=40, width=80)
+scrollbar.place(x=1325, y=50, height=600)
+chat_log.place(x=575, y=50, height=600, width=750)
+entry_box.place(x=575, y=665, height=40, width=650)
+send_button.place(x=1250, y=665, height=40, width=80)
 
 root.mainloop()
