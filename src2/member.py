@@ -21,7 +21,7 @@ class Member_landing(customtkinter.CTkFrame):
         # Create the components
         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
                                             font=('Century Gothic', 25))
-        self.request_entry = customtkinter.CTkEntry(self.inner_frame, width=50)
+        self.request_entry = customtkinter.CTkEntry(self.inner_frame, width=200)
         self.request_button = customtkinter.CTkButton(self.inner_frame, text="Request",
                                                     command=lambda: self.save_request(username))
         
