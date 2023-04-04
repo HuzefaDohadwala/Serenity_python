@@ -30,6 +30,7 @@
     {
       "tag": "name",
       "patterns": [
+        "WHo are you?",
         "What do you call yourself?",
         "How should I address you?",
         "May I know your name?",
@@ -216,6 +217,7 @@
     {
       "tag": "PeerPressure",
       "patterns": [
+        "My friends are forcing me",
         "I feel like my friends are pressuring me to do things I'm not comfortable with.",
         "I'm worried that if I don't go along with what my friends want, I'll be left out.",
         "I'm having a hard time saying no to my friends when they ask me to do something I don't want to do.",
