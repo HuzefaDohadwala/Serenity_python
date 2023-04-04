@@ -10,6 +10,11 @@ from tensorflow.keras.models import load_model
 
 import tkinter as tk
 
+# Set the background color to black
+BACKGROUND_COLOR = '#252525'
+FOREGROUND_COLOR = 'white'
+TEXT_COLOR = 'white'
+
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
 
@@ -69,21 +74,22 @@ def send():
 
 root = tk.Tk()
 root.title("Chatbot")
+root.configure(background=BACKGROUND_COLOR)
 
-chat_log = tk.Text(root, bd=0, bg="white", height="8", width="50", font="Arial",)
+chat_log = tk.Text(root, bd=0, bg="#1c1c1c", fg="white", height="8", width="50", font="Arial")
 chat_log.config(state=tk.DISABLED)
 
 scrollbar = tk.Scrollbar(root, command=chat_log.yview)
 chat_log['yscrollcommand'] = scrollbar.set
 
-entry_box = tk.Entry(root, bd=0, bg="white", width="29", font="Arial")
+entry_box = tk.Entry(root, bd=0, bg="#1c1c1c", fg=TEXT_COLOR, width="29", font="Arial")
 entry_box.bind("<Return>", (lambda event: send()))
 
-send_button = tk.Button(root, text="Send", command=send)
+send_button = tk.Button(root, text="Send", command=send, bg='blue', fg=FOREGROUND_COLOR)
 
-scrollbar.place(x=476, y=6, height=386)
-chat_log.place(x=6, y=6, height=386, width=470)
-entry_box.place(x=128, y=401, height=40, width=358)
-send_button.place(x=6, y=401, height=40)
+scrollbar.place(x=1125, y=50, height=600)
+chat_log.place(x=375, y=50, height=600, width=750)
+entry_box.place(x=375, y=665, height=40, width=650)
+send_button.place(x=1050, y=665, height=40, width=80)
 
 root.mainloop()
