@@ -38,7 +38,7 @@ except mysql.connector.Error as error:
 
 
 class SignupApp(customtkinter.CTkFrame):
-    def __init__(self, master):
+    def _init_(self, master):
         self.master = master
         self.master.title("Authentication")
         # set the dimensions of the main window
@@ -131,8 +131,8 @@ class SignupApp(customtkinter.CTkFrame):
 
 
 class Member_landing(customtkinter.CTkFrame):
-    def __init__(self, master=None, username=None):
-        super().__init__(master)
+    def _init_(self, master=None, username=None):
+        super()._init_(master)
         self.send_message = lambda: None
         self.type = None
         self.chatframe = None
@@ -252,8 +252,8 @@ class Member_landing(customtkinter.CTkFrame):
 
 
 class Listener_landing(customtkinter.CTkFrame):
-    def __init__(self, master=None, username=None):
-        super().__init__(master)
+    def _init_(self, master=None, username=None):
+        super()._init_(master)
         self.master = master
         self.pack(fill='both', expand=True)
 
@@ -362,8 +362,8 @@ class Listener_landing(customtkinter.CTkFrame):
 
 
 class LoginApp(customtkinter.CTkFrame):
-    def __init__(self, master=None):
-        super().__init__(master)
+    def _init_(self, master=None):
+        super()._init_(master)
         self.master = master
         # self.pack(fill='both', expand=True)
 
