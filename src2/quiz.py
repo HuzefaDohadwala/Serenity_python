@@ -216,7 +216,7 @@ gui = Tk()
 
 gui.geometry("800x700")
 
-gui.title("PhotoEvaluate Quiz")
+gui.title("Survey")
 
 # get the data from the json file
 with open('questions.json') as f:
