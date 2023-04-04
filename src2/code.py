@@ -16,7 +16,7 @@ customtkinter.set_default_color_theme("blue")
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Kedar@2004",
+    password="Root@1234",
     database="serenity",
 )
 

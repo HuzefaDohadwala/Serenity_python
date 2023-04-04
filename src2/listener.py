@@ -117,7 +117,7 @@ class Listener_landing(customtkinter.CTkFrame):
 
     def accept_request(self, request_id):
         # Remove the request from the database
-        db = mysql.connector.connect(host='localhost', user='root', password='Kedar@2004', database='serenity')
+        db = mysql.connector.connect(host='localhost', user='root', password='Root@1234', database='serenity')
         cursor = db.cursor()
         cursor.execute("DELETE FROM requests WHERE id=%s", (request_id,))
         db.commit()
