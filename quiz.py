@@ -53,19 +53,9 @@ class Quiz:
         mb.showinfo(msg)
 
     def display_result(self):
+        result = f"Thank you for answering"
 
-        wrong_count = self.data_size - self.correct
-        sum = 0
-        for value in result_ans.values():
-            sum+=value
-        wrong_count = self.data_size-sum
-        correct = f"Correct: {sum}"
-        wrong = f"Wrong: {wrong_count}"
-
-        score = int(sum / self.data_size * 100)
-        result = f"Score: {score}%"
-
-        mb.showinfo("Result", f"{result}\n{sum}\n{wrong}")
+        mb.showinfo("Response collected", f"{result}")
 
     def check_ans(self, q_no):
         user_choice[q_no] = self.opt_selected.get()
@@ -102,7 +92,7 @@ class Quiz:
         next_button = None
         if place_next:
             next_button = Button(gui, text='Next',command=self.next_btn,
-            width=10,bg="blue",fg="white",font=("ariel",16,"bold"))
+            width=10,bg="black",fg="white",font=("ariel",16,"bold"))
 
             next_button.place(x=350,y=580)
 
@@ -115,7 +105,7 @@ class Quiz:
 
     def back_button(self):
         back_btn = Button(gui, text='Back',command=self.go_back,
-            width=10,bg="blue",fg="white",font=("ariel",16,"bold"))
+            width=10,bg="black",fg="white",font=("ariel",16,"bold"))
         back_btn.place(x=150,y=580)
 
     def go_back(self):
@@ -129,7 +119,7 @@ class Quiz:
 
     def entry_button(self):
         entry_button = Button(gui, text="Entry",command=self.evaluate,
-            width=10,bg="blue",fg="white",font=("ariel",16,"bold"))
+            width=10,bg="black",fg="white",font=("ariel",16,"bold"))
         entry_button.place(x=200,y=200)
         return entry_button
 
@@ -191,8 +181,8 @@ class Quiz:
     def display_title(self):
 
         # The title to be shown
-        title = Label(gui, text="Photosensitive QUIZ",
-        width=50, bg="green",fg="white", font=("ariel", 20, "bold"))
+        title = Label(gui, text="Help us understand you better",
+        width=50, bg="black",fg="white", font=("ariel", 20, "bold"))
 
         # place of the title
         title.place(x=0, y=2)
@@ -206,7 +196,7 @@ class Quiz:
         y_pos = 350
 
         # adding the options to the list
-        while len(q_list) < 4:
+        while len(q_list) < 2:
             radio_btn = Radiobutton(gui,text=" ",variable=self.opt_selected,
             value = len(q_list)+1,font = ("ariel",14))
 
