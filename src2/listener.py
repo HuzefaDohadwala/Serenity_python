@@ -153,7 +153,7 @@ class Listener_landing(customtkinter.CTkFrame):
             child.destroy()
 
         # Connect to the database and fetch all requests
-        db = mysql.connector.connect(host='localhost', user='root', password='Kedar@2004', database='serenity')
+        db = mysql.connector.connect(host='localhost', user='root', password='Root@1234', database='serenity')
         cursor = db.cursor()
         cursor.execute("SELECT * FROM requests")
         rows = cursor.fetchall()
