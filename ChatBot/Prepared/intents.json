@@ -185,6 +185,181 @@
         "It's okay to take breaks and prioritize your well-being. Let's talk about some self-care strategies that work for you.",
         "Taking care of yourself is essential for academic success. Let's explore some self-care practices that can help you feel more energized and focused."
       ]
+    },
+    {
+      "tag": "FamilyProblems",
+      "patterns": [
+        "I'm having a lot of conflicts with my parents lately, and I don't know what to do.",
+        "My sister and I aren't getting along, and it's really affecting our relationship. How can I fix things?",
+        "I'm feeling really stressed out about my family situation, and I don't know how to cope.",
+        "I think my parents are going through a rough patch in their marriage, and it's really worrying me.",
+        "My family is putting a lot of pressure on me to do well in school, and it's causing me a lot of anxiety.",
+        "I feel like I can't talk to my family about how I'm feeling, and it's making things worse.",
+        "My parents are going through a divorce, and it's really difficult for me to handle.",
+        "I'm having trouble setting boundaries with my family, and it's causing a lot of stress.",
+        "I'm worried that my family doesn't understand me or my needs.",
+        "My family has a history of mental health problems, and I'm worried that I might be affected too."
+      ],
+      "responses": [
+        "I'm sorry to hear that you're having conflicts with your parents. Would you like to talk about what's been going on?",
+        "It's tough when you're not getting along with your family. Have you tried talking to your family about how you're feeling?",
+        "I can understand how stressful family situations can be. Have you tried any relaxation techniques or coping strategies?",
+        "It's normal to worry about your family. Would you like to talk about your concerns with any of our listeners",
+        "family pressure can be tough to handle. You can start with telling them about it. ",
+        "It can be hard when you feel like you can't talk to your family. Feel free to share your feelings with me",
+        "Family conflicts can be difficult for everyone involved. Have you talked to your parents about how you're feeling?",
+        "Setting boundaries is an important part of maintaining healthy relationships. Would you like to talk about ways to establish boundaries with our listeners?",
+        "Feeling misunderstood by your family can be tough. Have you talked to them about how you're feeling?",
+        "It's important to take care of your mental health. Would you like me to help you find resources for support?"
+      ]
+    },
+    {
+      "tag": "PeerPressure",
+      "patterns": [
+        "I feel like my friends are pressuring me to do things I'm not comfortable with.",
+        "I'm worried that if I don't go along with what my friends want, I'll be left out.",
+        "I'm having a hard time saying no to my friends when they ask me to do something I don't want to do.",
+        "I'm starting to feel like I'm losing myself and my values because of the pressure from my friends.",
+        "I don't want to disappoint my friends, but I also don't want to compromise my own beliefs.",
+        "I feel like my friends are always judging me and pushing me to fit in with their group.",
+        "I'm worried that if I don't do what my friends want, they'll stop being my friends.",
+        "I'm having trouble standing up for myself and saying no to peer pressure.",
+        "I'm feeling a lot of anxiety and stress about peer pressure from my friends.",
+        "I'm worried that if I don't go along with what my friends want, they'll talk about me behind my back."
+      ],
+      "responses": [
+        "It can be tough when you feel like your friends are pressuring you. You can talk with our listeners about it",
+        "Feeling left out is a common fear when dealing with peer pressure. Would you like to talk about ways to cope with this feeling with our listeneers",
+        "Saying no to friends can be difficult. You can take suggestions on this from our listeners",
+        "It's important to stay true to your own values and beliefs. You can talk about it with our listeners ",
+        "Balancing your own beliefs with the desire to please your friends can be tricky.",
+        "Feeling judged by your friends can be difficult. Would you like to talk about ways to build confidence and self-esteem with our listeners",
+
+        "Standing up for yourself can be challenging, but it's important to set boundaries. YOu need to find strategies for assertiveness, Our listeners can help you with this.",
+        "Anxiety and stress can be common when dealing with peer pressure. Would you like to talk about coping strategies for managing these feelings?",
+        "Worrying about negative thoughts and comments from friends can be really stressful. To releave this stress feel free to reach out to any of our listeners"
+      ]
+    },
+    {
+      "tag": "FutureUncertainty",
+      "patterns": [
+        "I'm not sure what I want to do with my life and it's causing me a lot of stress.",
+        "I feel like I'm not making any progress towards my goals and it's making me anxious.",
+        "I'm worried about what the future holds and I'm not sure how to plan for it.",
+        "I feel like there are so many different paths I could take and I don't know which one to choose.",
+        "I'm worried that I won't be able to achieve my dreams and it's holding me back.",
+        "I'm feeling overwhelmed by the pressure to make important life decisions.",
+        "I'm not sure if the choices I'm making now will lead me to where I want to be in the future.",
+        "I'm worried about the state of the world and how it will impact my future.",
+        "I'm feeling lost and uncertain about what steps to take next in my life.",
+        "I'm worried that I'm running out of time to achieve my goals and it's causing me stress."
+      ],
+      "responses": [
+        "It's normal to feel uncertain about the future. Would you like to talk about ways to manage your stress and anxiety?",
+        "Setting small, achievable goals can help you make progress towards your larger goals. Would you like to talk about goal-setting and time management strategies?",
+        "Planning for the future can be overwhelming. Would you like to talk about breaking down your goals into smaller, more manageable steps?",
+        "Exploring different paths and options can help you make a more informed decision about your future. Would you like to talk about ways to research and explore your options?",
+        "It's important to believe in yourself and your ability to achieve your dreams. Would you like to talk about building self-confidence?",
+        "Feeling pressure to make important life decisions can be stressful. Would you like to talk about ways to reduce this pressure and make decisions that are right for you?",
+        "The choices you make now may not determine your entire future. Would you like to talk about how to adjust your goals and plans as your circumstances change?",
+        "The state of the world can be uncertain, but there are still things within your control. Would you like to talk about ways to focus on the present and take action towards your goals?",
+        "Feeling lost and uncertain can be overwhelming, but there are resources and support available to help you. Would you like to talk about finding support and guidance?",
+        "It's never too late to work towards your goals and dreams. Would you like to talk about ways to identify and pursue your passions?"
+      ]
+    },
+    {
+      "tag": "SocialMedia",
+      "patterns": [
+        "I'm spending too much time on social media and it's affecting my productivity and well-being.",
+        "I'm feeling overwhelmed by the constant stream of information and negativity on social media.",
+        "I'm worried that I'm addicted to social media and it's interfering with my daily life.",
+        "I'm feeling pressure to present a perfect image of myself on social media and it's causing me stress and anxiety.",
+        "I'm concerned about my privacy and security on social media platforms.",
+        "I'm worried that social media is negatively impacting my mental health and self-esteem.",
+        "I'm feeling left out or excluded when I see what others are doing on social media.",
+        "I'm concerned about the impact of social media on society and relationships.",
+        "I'm unsure of how to effectively use social media for networking or job searching.",
+        "I'm feeling pressure to keep up with social media trends and updates, but I'm not sure how to stay informed."
+      ],
+      "responses": [
+        "It's important to find a healthy balance between using social media and focusing on other areas of your life. ",
+        "It's normal to feel overwhelmed by the amount of information on social media. You can talk about strategies on this with our listeners.",
+        "If you're concerned about your social media usage, there are steps you can take to reduce your reliance on like using a screen time widget, enabeling Greyscale on your device, seeting app timers etc",
+        "It's important to remember that social media is just a highlight reel of people's lives.",
+        "It's important to protect your privacy and security on social media platforms. Would you like to talk about ways to safeguard your personal information with our listeners",
+        "Social media can have both positive and negative effects on mental health. Try filtering out hte negative content and focus on the positive aspects.",
+
+        "Social media can have a significant impact on the society. Feel free to reach out to our listeners."
+      ]
+    },
+    {
+      "tag": "CopingStrategies",
+      "patterns": [
+        "I'm feeling overwhelmed and need some help coping with stress.",
+        "I'm experiencing a lot of anxiety and need some strategies for managing it.",
+        "I'm struggling with depression and need some strategies for coping with negative thoughts and emotions.",
+        "I'm dealing with a difficult situation and need some strategies for staying calm and focused.",
+        "I'm feeling isolated and need some strategies for improving my mental health and well-being.",
+        "I'm experiencing a lot of grief and need some strategies for coping with loss and bereavement.",
+        "I'm dealing with a chronic illness and need some strategies for managing my symptoms and improving my quality of life.",
+        "I'm experiencing a lot of anger and need some strategies for managing my emotions and avoiding conflict.",
+        "I'm dealing with addiction and need some strategies for managing cravings and avoiding relapse.",
+        "I'm struggling with self-esteem and need some strategies for improving my confidence and self-worth."
+      ],
+      "responses": [
+        "When feeling overwhelmed, it can be helpful to take a step back and focus on self-care. You can talk about mindfulness practices or other relaxation techniques with our listeners",
+        "Anxiety can be a challenging emotion to manage, but there are strategies you can try to help cope with it. you can talk about them more deeply with our listeners",
+        "Stressful situations can be difficult to navigate, but there are strategies you can try to help stay calm and focused. Would you like to talk about problem-solving techniques or time management strategies with our listeners",
+        "If you're feeling isolated, there are many strategies you can try to improve your mental health and well-being. You can reach out to our listeners for ways to build social connections or improve self-care practices",
+        "Illnesses can be difficult to manage, but there are many strategies you can try to help improve your quality of life.  You can reach out to our listene to talk about pain management techniques or other coping strategies?"
+      ]
+    },
+    {
+      "tag": "SelfesteemAndPositivity",
+      "patterns": [
+        "I'm struggling with low self-esteem and need some strategies for building confidence.",
+        "I'm feeling down and need some strategies for cultivating a more positive mindset.",
+        "I'm dealing with a lot of self-doubt and need some strategies for overcoming it.",
+        "I'm experiencing a lot of negative self-talk and need some strategies for improving my self-image.",
+        "I'm feeling unmotivated and need some strategies for boosting my self-esteem.",
+        "I'm struggling to see the positives in a situation and need some strategies for cultivating a more positive outlook.",
+        "I'm feeling discouraged and need some strategies for staying motivated and on track.",
+        "I'm experiencing a lot of self-criticism and need some strategies for practicing self-compassion.",
+        "I'm dealing with a lot of stress and need some strategies for managing it and maintaining a positive mindset.",
+        "I'm feeling insecure and need some strategies for developing a more confident and positive attitude."
+      ],
+      "responses": [
+        "When struggling with low self-esteem, it can be helpful to focus on your strengths and accomplishments. You can reach out to our listeners to identify and build on your personal strengths?",
+        "Cultivating a positive mindset can take practice, but there are many strategies you can try. Would can talk about gratitude journaling or visualization techniques with our listeners",
+        "Overcoming self-doubt can be challenging, but there are strategies you can try to build confidence. you can discuss about them more elaborately with our listeners",
+        "Negative self-talk can be harmful to self-esteem, but there are strategies you can try to improve your self-image.",
+        "Boosting self-esteem can take time, but there are strategies you can try to start feeling better about yourself. You can reach out to our listeners to discuss achievable goals or building self-care practices?",
+        "When struggling to find positives in a situation, it can be helpful to focus on gratitude,perspective and reframing the negative thoughts .",
+        "Staying motivated and on track can be challenging, but there are strategies you can try to stay focused. You can talk to our listeners about setting achievable goals or creating a routine"
+      ]
+    },
+    {
+      "tag": "TimeManagement",
+      "patterns": [
+        "I'm struggling to stay productive and manage my time effectively. Do you have any tips for improving time management skills?",
+        "I'm feeling overwhelmed and need some strategies for prioritizing tasks and managing my time better.",
+        "I'm having trouble balancing work, school, and personal responsibilities. Can you suggest some time management strategies?",
+        "I'm finding it difficult to stay focused and motivated throughout the day. Can you suggest some time management techniques to help me stay on track?",
+        "I'm constantly running out of time and need some strategies for managing my schedule more efficiently.",
+        "I'm struggling with procrastination and need some strategies for overcoming it and improving my time management skills.",
+        "I'm having trouble estimating how much time tasks will take. Can you suggest some time management strategies to help me better estimate my workload?",
+        "I'm struggling to say no to new tasks and commitments. Can you suggest some time management techniques for setting boundaries and prioritizing tasks?",
+        "I'm feeling burnt out and need some strategies for managing my time and workload more effectively to avoid burnout.",
+        "I'm feeling disorganized and need some strategies for improving my time management and organizational skills."
+      ],
+      "responses": [
+        "To improve time management skills, it's important to prioritize tasks and create a schedule. You can talk about it with our listeners",
+        "A helpful time management strategy is to break down tasks into smaller, more manageable steps.",
+        "To manage your time more effectively, it's important to eliminate distractions. Would you like to discuss strategies for minimizing distractions and staying focused with our listeners?",
+        "To manage your time more effectively, it can be helpful to delegate tasks to others or outsource them. You can discuss about it with our listeners",
+        "To improve time management skills, it's important to take breaks and recharge regularly. ",
+        "To improve time management skills, it's important to track your progress and adjust your strategies as needed. You can discuss about them with our listeners "
+      ]
     }
   ]
 }
