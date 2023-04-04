@@ -1,3 +1,4 @@
+import datetime
 import tkinter
 import tkinter as tk
 from tkinter import messagebox
@@ -9,17 +10,17 @@ customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
 
 # Create a database connection
-#try:
+# try:
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Root@1234",
+    password="Kedar@2004",
     database="serenity",
 )
 
-    #print("Database connection established!")
-#except mysql.connector.Error as error:
-    #print("Error while connecting to MySQL: ", error)
+# print("Database connection established!")
+# except mysql.connector.Error as error:
+# print("Error while connecting to MySQL: ", error)
 
 cursor = conn.cursor()
 
@@ -132,6 +133,7 @@ class SignupApp(customtkinter.CTkFrame):
 class Member_landing(customtkinter.CTkFrame):
     def __init__(self, master=None, username=None):
         super().__init__(master)
+        self.send_message = lambda: None
         self.type = None
         self.chatframe = None
         self.send_button = None
@@ -178,36 +180,75 @@ class Member_landing(customtkinter.CTkFrame):
         for listener in listeners:
             listener_username = listener[1]
             chat_button = customtkinter.CTkButton(master=chat_buttons, text=f"Chat with {listener_username}",
-                                                command=lambda u=username: self.initiate_chat(u),
-                                                width=400, height=100, corner_radius=0)
+                                                  command=lambda u=username, l=listener_username: self.initiate_chat(u,
+                                                                                                                     l),
+                                                  width=400, height=100, corner_radius=0)
             chat_button.place(x=button_x, y=button_y)
             button_y += 120
             chat_button.pack(padx=0, pady=0, ipadx=0, ipady=0, fill='none')
 
+    def initiate_chat(self, username, listener_username):
+        print("Listener button pressed!!")
+        print(username)
+        print(listener_username)
 
+        cursor.execute("Select * from users WHERE username=%s;", (username,))
+        sender_user = cursor.fetchone()
 
+        def send_message():
+            print("Message sent!!")
+            message_text = self.type.get()
+            sender_id = sender_user[0]
 
-    # def initiate_chat(self, username):
-    #     print("Listener button pressed!!")
-    #     self.chatframe = customtkinter.CTk()
-    #     self.chatframe = customtkinter.CTkFrame(self.inner_frame, width=600, corner_radius=6, fg_color="white",
-    #                                             height=500)
-    #     self.type = customtkinter.CTkEntry(self.inner_frame, width=550, corner_radius=6, height=25)
-    #     self.send_button = customtkinter.CTkButton(self.inner_frame, command=self.send_message(),
-    #                                                text="Send", width=80,
-    #                                                height=25, corner_radius=6)
-    #
-    #     self.chatframe.place(x=370, y=150)
-    #     self.type.place(x=370, y=660)
-    #     self.send_button.place(x=920, y=660)
-    #
-    #
-    #
-    #
-    # def send_message(self):
-    #     message = self.type.get()
-    #     self.type.delete(0, tkinter.END)
-    #     self.chatframe.insert()
+            # receiver_username = listener_username
+            cursor.execute("Select * from users WHERE username=%s;", (listener_username,))
+            receiver_username = cursor.fetchone()[0]
+            timestamp = str(datetime.datetime.now())
+            print(receiver_username)
+            print(listener_username)
+            print(sender_user[0])
+
+            cursor.execute("INSERT INTO messages (sender, receiver, message, timestamp) VALUES (%s, %s, %s, %s);",
+                           (sender_id, receiver_username, message_text, timestamp))
+            conn.commit()
+            print("Message inserted into db")
+            self.chatframe.insert(tkinter.END, f"{sender_user[1]}: {message_text}\n")
+            self.type.delete(0, 'end')  # Clear the message from the entry component
+
+        self.send_message = send_message  # assign the function to self.send_message
+
+        self.chatframe = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="black",
+                                                  height=500)
+        self.type = customtkinter.CTkEntry(self.inner_frame, width=550, corner_radius=6, height=25)
+        # self.send_message = lambda: self.send_message_command(username_id_dict, listener_username)
+        self.send_button = customtkinter.CTkButton(self.inner_frame,
+                                                   command=lambda: self.send_message(),
+                                                   text="Send", width=80,
+                                                   height=25, corner_radius=6)
+
+        self.chatframe.place(x=370, y=150)
+        self.type.place(x=370, y=660)
+        self.send_button.place(x=920, y=660)
+
+        cursor.execute("Select * from users WHERE username=%s;", (listener_username,))
+        reciever = cursor.fetchone()[0]
+
+        # Retrieve texts from database
+        sql = "SELECT * FROM messages WHERE (sender = %s AND receiver = %s) OR (sender = %s AND receiver = %s) ORDER " \
+              "BY timestamp ASC "
+        val = (sender_user[0], reciever, reciever, sender_user[0])
+        cursor.execute(sql, val)
+        messages = cursor.fetchall()  # fetch all the rows from the query result
+        print(sender_user)
+        print(listener_username)
+
+        for message in messages:
+            sender_name = None
+            id = message[1]
+
+            cursor.execute("Select username from users WHERE id=%s", (id,))
+            sender_name = cursor.fetchone()[0]
+            self.chatframe.insert(tkinter.END, f"{sender_name}: {message[3]}\n")
 
 
 class Listener_landing(customtkinter.CTkFrame):
@@ -226,6 +267,98 @@ class Listener_landing(customtkinter.CTkFrame):
 
         # Place the components
         self.welcome.pack(side='top', padx=20, pady=50)
+
+        sql = "SELECT * FROM users WHERE role='member';"
+        cursor.execute(sql)
+        members = cursor.fetchall()
+
+        # Create the chat buttons component
+        chat_buttons = customtkinter.CTkFrame(self.inner_frame)
+        chat_buttons.pack(side='right', fill='y', padx=20, pady=(0, 50))
+
+        # Set the size of the chat buttons component
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        chat_buttons_width = int(screen_width / 4)
+        chat_buttons_height = int(screen_height / 8)
+        chat_buttons.configure(width=chat_buttons_width, height=chat_buttons_height)
+
+        # Create the chat buttons
+        button_x = 0
+        button_y = 0
+        for member in members:
+            member_username = member[1]
+            chat_button = customtkinter.CTkButton(master=chat_buttons, text=f"Chat with {member_username}",
+                                                  command=lambda u=username, l=member_username: self.initiate_chat(u,
+                                                                                                                   l),
+                                                  width=400, height=100, corner_radius=0)
+            chat_button.place(x=button_x, y=button_y)
+            button_y += 120
+            chat_button.pack(padx=0, pady=0, ipadx=0, ipady=0, fill='none')
+
+    #
+    def initiate_chat(self, username, member_username):
+        print("Member button pressed!!")
+        print(username)
+        print(member_username)
+
+        cursor.execute("Select * from users WHERE username=%s;", (username,))
+        sender_user = cursor.fetchone()
+
+        def send_message():
+            print("Message sent!!")
+            message_text = self.type.get()
+            sender_id = sender_user[0]
+
+            # receiver_username = listener_username
+            cursor.execute("Select * from users WHERE username=%s;", (member_username,))
+            receiver_username = cursor.fetchone()[0]
+            timestamp = str(datetime.datetime.now())
+            print(receiver_username)
+            print(member_username)
+            print(sender_user[0])
+
+            cursor.execute("INSERT INTO messages (sender, receiver, message, timestamp) VALUES (%s, %s, %s, %s);",
+                           (sender_id, receiver_username, message_text, timestamp))
+            conn.commit()
+            print("Message inserted into db")
+            self.chatframe.insert(tkinter.END, f"{sender_user[1]}: {message_text}\n")
+            self.type.delete(0, 'end')  # Clear the message from the entry component
+
+        self.send_message = send_message  # assign the function to self.send_message
+
+        self.chatframe = customtkinter.CTkTextbox(self.inner_frame, width=600, corner_radius=6, fg_color="black",
+                                                  height=500)
+        self.type = customtkinter.CTkEntry(self.inner_frame, width=550, corner_radius=6, height=25)
+        # self.send_message = lambda: self.send_message_command(username_id_dict, listener_username)
+        self.send_button = customtkinter.CTkButton(self.inner_frame,
+                                                   command=lambda: self.send_message(),
+                                                   text="Send", width=80,
+                                                   height=25, corner_radius=6)
+
+        self.chatframe.place(x=370, y=150)
+        self.type.place(x=370, y=660)
+        self.send_button.place(x=920, y=660)
+
+        cursor.execute("Select * from users WHERE username=%s;", (member_username,))
+        reciever = cursor.fetchone()[0]
+
+        # Retrieve texts from database
+        sql = "SELECT * FROM messages WHERE (sender = %s AND receiver = %s) OR (sender = %s AND receiver = %s) ORDER " \
+              "BY timestamp ASC "
+        val = (sender_user[0], reciever, reciever, sender_user[0])
+        cursor.execute(sql, val)
+        messages = cursor.fetchall()  # fetch all the rows from the query result
+        print(sender_user)
+        print(member_username)
+
+        for message in messages:
+            sender_name = None
+            id = message[1]
+
+            cursor.execute("Select username from users WHERE id=%s", (id,))
+            sender_name = cursor.fetchone()[0]
+            self.chatframe.insert(tkinter.END, f"{sender_name}: {message[3]}\n")
 
 
 class LoginApp(customtkinter.CTkFrame):
