@@ -5,6 +5,8 @@ import tkinter as tk
 import mysql.connector
 import customtkinter
 import mysql
+from member import Member_landing
+from listener import Listener_landing
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -130,39 +132,42 @@ class SignupApp(customtkinter.CTkFrame):
         if self.create_user():
             self.frame.destroy()
 
-class Member_landing(customtkinter.CTkFrame):
-    def __init__(self, master=None, username=None):
-        super().__init__(master)
-        self.master = master
-        self.pack(fill='both', expand=True)
 
-        # Create the frame to hold the components
-        self.inner_frame = customtkinter.CTkFrame(self)  # set background color of inner frame to black
-        self.inner_frame.pack(fill='both', expand=True)
+# class Member_landing(customtkinter.CTkFrame):
+#     def __init__(self, master=None, username=None):
+#         super().__init__(master)
+#         self.master = master
+#         self.pack(fill='both', expand=True)
+#
+#         # Create the frame to hold the components
+#         self.inner_frame = customtkinter.CTkFrame(self)  # set background color of inner frame to black
+#         self.inner_frame.pack(fill='both', expand=True)
+#
+#         # Create the components
+#         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
+#                                               font=('Century Gothic', 25))
+#
+#         # Place the components
+#         self.welcome.pack(side='top', padx=20, pady=50)
 
-        # Create the components
-        self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
-                                              font=('Century Gothic', 25))
 
-        # Place the components
-        self.welcome.pack(side='top', padx=20, pady=50)
+# class Listener_landing(customtkinter.CTkFrame):
+#     def __init__(self, master=None, username=None):
+#         super().__init__(master)
+#         self.master = master
+#         self.pack(fill='both', expand=True)
+#
+#         # Create the frame to hold the components
+#         self.inner_frame = customtkinter.CTkFrame(self)  # set background color of inner frame to black
+#         self.inner_frame.pack(fill='both', expand=True)
+#
+#         # Create the components
+#         self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
+#                                               font=('Century Gothic', 25))
+#
+#         # Place the components
+#         self.welcome.pack(side='top', padx=20, pady=50)
 
-class Listener_landing(customtkinter.CTkFrame):
-    def __init__(self, master=None, username=None):
-        super().__init__(master)
-        self.master = master
-        self.pack(fill='both', expand=True)
-
-        # Create the frame to hold the components
-        self.inner_frame = customtkinter.CTkFrame(self)  # set background color of inner frame to black
-        self.inner_frame.pack(fill='both', expand=True)
-
-        # Create the components
-        self.welcome = customtkinter.CTkLabel(self.inner_frame, text=f"Welcome {username}!",
-                                              font=('Century Gothic', 25))
-
-        # Place the components
-        self.welcome.pack(side='top', padx=20, pady=50)
 
 class LoginApp(customtkinter.CTkFrame):
     def __init__(self, master=None):
