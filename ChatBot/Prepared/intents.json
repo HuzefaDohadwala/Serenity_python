@@ -147,7 +147,8 @@
         "I'm so stressed about getting good grades",
         "I have too much on my plate with school and extracurricular activities",
         "I'm afraid of failing my classes",
-        "I'm having trouble concentrating on my schoolwork"
+        "I'm having trouble concentrating on my schoolwork",
+        "My Grades are low"
       ],
       "responses": [
         "It sounds like you're feeling a lot of pressure from school. Would you like to talk about some strategies to help manage your workload?",
@@ -184,6 +185,32 @@
         "Self-care is important, especially when you're feeling overwhelmed. Let's talk about some ways to incorporate self-care into your routine.",
         "It's okay to take breaks and prioritize your well-being. Let's talk about some self-care strategies that work for you.",
         "Taking care of yourself is essential for academic success. Let's explore some self-care practices that can help you feel more energized and focused."
+      ]
+    },
+    {
+      "tag": "Breakup",
+      "patterns": [
+        "My boyfriend/girlfriend just broke up with me and I don't know what to do.",
+        "I'm heartbroken and can't stop thinking about my ex.",
+        "I feel so alone after my breakup.",
+        "I blame myself for the relationship ending.",
+        "I can't sleep or eat after my breakup.",
+        "I'm avoiding my friends and family since the breakup.",
+        "I'm scared I'll never find love again.",
+        "I don't know how to move on from my ex.",
+        "I keep checking my ex's social media and it's making things worse.",
+        "I feel like I'll never be happy again after the breakup."
+      ],
+      "responses": [
+        "I'm so sorry to hear that. Breakups can be really tough, but I'm here to support you.",
+        "It's okay to feel heartbroken right now. Give yourself time to grieve the loss of the relationship.",
+        "You're not alone. Many people go through breakups and it's natural to feel isolated. But remember, you have people who care about you.",
+        "It's not your fault that the relationship ended. Sometimes things just don't work out, and that's okay.",
+        "Loss of appetite, difficulty sleeping, and other physical symptoms are common after a breakup. Try to take care of yourself and prioritize your well-being.",
+        "It's understandable that you want some time alone, but don't isolate yourself completely. Reach out to a friend or family member if you need someone to talk to.",
+        "It's normal to feel scared or uncertain about the future after a breakup. Just remember that time heals all wounds, and you will find happiness again.",
+        "Moving on from a breakup is a process. Take it one day at a time and don't put too much pressure on yourself.",
+        "You will be happy again. It may not feel like it right now, but things will get better with time. Just keep putting one foot in front of the other."
       ]
     }
   ]
