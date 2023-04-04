@@ -30,4 +30,12 @@ pip install numpy
 pip install Python-IO
 pip install keras-models
 ```
-    
+
+## Tech stack
+
+- Python
+- MySQL
+- TensorFlow
+- Natural Language Toolkit
+
+
