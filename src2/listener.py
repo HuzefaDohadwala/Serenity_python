@@ -108,7 +108,12 @@ class Listener_landing(customtkinter.CTkFrame):
         self.fetch_and_display_requests()
 
         # Set up a timer to fetch requests every 5 seconds
-        self.master.after(5000, self.fetch_and_display_requests)
+        # Set up a timer to fetch requests every 5 seconds
+        self.master.after(5000, self.fetch_and_display_requests_periodically)
+
+    def fetch_and_display_requests_periodically(self):
+        self.fetch_and_display_requests()
+        self.master.after(5000, self.fetch_and_display_requests_periodically)
 
     def accept_request(self, request_id):
         # Remove the request from the database
@@ -116,12 +121,31 @@ class Listener_landing(customtkinter.CTkFrame):
         cursor = db.cursor()
         cursor.execute("DELETE FROM requests WHERE id=%s", (request_id,))
         db.commit()
+        print("Request accepted!!")
 
         # Clear the request frame and fetch requests again
         for button in self.accept_buttons:
             button.destroy()
         self.accept_buttons = []
         self.fetch_and_display_requests()
+        self.Chatframe()
+
+    def Chatframe(self):
+
+        self.chatframe = customtkinter.CTk()
+        self.chatframe = customtkinter.CTkScrollableFrame(self.inner_frame, width=200, height=200)
+        self.entry = customtkinter.CTkEntry(self.inner_frame, width=150, height=30)
+        self.send_btn = customtkinter.CTkButton(self.inner_frame, width=50, height=30)
+
+        self.chatframe.place(x=50, y=50)
+        self.entry.place(x=50, y=250)
+        self.send_btn.place(x=200, y=250)
+
+
+
+
+
+
 
     def fetch_and_display_requests(self):
         # Clear the request frame
