@@ -1,0 +1,17 @@
+ select * from users;
++----+----------+----------+----------+
+| id | username | password | role     |
++----+----------+----------+----------+
+|  1 |          |          | member   |
+|  2 | hello    | 123      | member   |
+|  3 | Kedar    | 11       | member   |
+|  4 | 1        | 1        | member   |
+|  5 | 2        | 2        | member   |
+|  6 | 3        | 3        | member   |
+|  7 | 4        | 4        | member   |
+|  8 | lis1     | pass1    | listener |
+|  9 | lis2     | pass2    | listener |
+| 10 | lis3     | pass3    | listener |
+| 11 | lis4     | pass4    | listener |
+| 12 | lis5     | pass5    | listener |
++----+----------+----------+----------+
